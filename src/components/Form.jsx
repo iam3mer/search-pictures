@@ -8,7 +8,7 @@ const Form = ({ handleSubmit, history }) => {
   };
 
   return (
-    <form className="search-form" onSubmit={evt => handleSubmit(evt, history, searchEntry)}>
+    <form className="search-form" onSubmit={evt => {handleSubmit(evt, history, searchEntry); setSearchEntry("");}}>
       <input type="text" name="search" onChange={updateSearchInput} value={searchEntry}/>
       <button type="submit" className={`search-button ${searchEntry.trim() ? "active" : null}`} disabled={!searchEntry.trim()}>
       <img src="https://img.icons8.com/material-outlined/24/000000/search--v1.png" alt=""/>
