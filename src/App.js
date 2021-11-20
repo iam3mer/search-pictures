@@ -10,14 +10,14 @@ class App extends React.Component {
   handleSubmit = (evt, history, searchInput ) => {
     evt.preventDefault();
     evt.currentTarget.reset();
-    let url = `search/${searchInput}`;
+    let url = `/search/${searchInput}`;
     history.push(url);
   };
 
   render() {
     return (
       <PhotoContextProvider>
-        <HashRouter basename="/Snap">
+        <HashRouter basename="/search">
           <div className="container">
             <Route render={props => <Header handleSubmit={this.handleSubmit} history={props.history}/>}/>
             <Switch>
